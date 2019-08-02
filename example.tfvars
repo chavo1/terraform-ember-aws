@@ -1,0 +1,5 @@
+ami           = "<AWS AMI>"
+key_name      = "<AWS key"
+instance_type = "t2.micro"
+subnet        = "<AWS VPC Subnet>"
+region        = "<AWS region>"
