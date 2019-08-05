@@ -43,7 +43,8 @@ sudo systemctl start ember
 if [ $? -eq 0 ]; then
     echo Ember started
 else
-    echo exit1
+    echo Ember not started
+    exit 1
 fi
 
 set +x
