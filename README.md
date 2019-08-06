@@ -5,7 +5,7 @@
 - [Vagrant](https://www.vagrantup.com/)
 - [Terraform](https://www.terraform.io/)
 - [Packer](https://www.packer.io/)
-  - | [This](https://github.com/chavo1/packer-ember-ec2) GitHub repo to prepare your custom AWS AMI
+  - | You can use [THIS](https://github.com/chavo1/packer-ember-ec2) GitHub repo to prepare your custom AWS AMI
 
 ## Clone the repo
 ```
