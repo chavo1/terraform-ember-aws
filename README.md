@@ -15,7 +15,7 @@ cd vagrant-emberjs
 ```
 vagrant up
 ```
-#### With terraform it will spin-up one EC2 instance in AWS in two Terraform workspaces.
+#### With terraform it will spin-up Two EC2 instances in AWS - one for each Terraform workspace.
 - First create two .tfvars files one for prod and one for dev (just change the network) refer to the example .
 ```
 terraform workspace new prod //will create prod workspace 
