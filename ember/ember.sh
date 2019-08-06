@@ -4,24 +4,22 @@ set -ex
 
 export DEBIAN_FRONTEND=noninteractive
 
-# install packages
-sudo apt-get update -y
-which unzip &>/dev/null || {
-  sudo apt-get install -y unzip
-}
-
 CHECKFILE="/vagrant/ember/hello-world"
 
 if [ -z "$(getent passwd vagrant)" ]; then
-        # disable `apt-daily.service` on Ubuntu cloud VM image
+        # disable `apt-daily.service` on Ubuntu - cloud VM image
         systemctl stop apt-daily.service
         systemctl kill --kill-who=all apt-daily.service
-            
-        wget https://github.com/chavo1/hello-world/archive/0.0.4.zip && unzip 0.0.4.zip
-        mv hello-world-0.0.4 /home/ubuntu/hello-world
+        sudo apt-get update -y
+        which unzip &>/dev/null || {
+        sudo apt-get install -y unzip
+        }
+        wget https://github.com/chavo1/hello-world/archive/0.0.5.zip && unzip 0.0.5.zip
+        mv hello-world-0.0.5 /home/ubuntu/hello-world
         cd /home/ubuntu/hello-world  
 else
     if [ ! -d "$CHECKFILE" ]; then
+        sudo apt-get update -y
         which git &>/dev/null || {
         apt-get install -y git
         }

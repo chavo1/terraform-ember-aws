@@ -14,8 +14,8 @@ resource "aws_instance" "server" {
   }
 
   provisioner "file" {
-    source      = "ember/"
-    destination = "/tmp/"
+    source      = "ember/ember.sh"
+    destination = "/tmp/ember.sh"
   }
 
   provisioner "remote-exec" {
