@@ -15,15 +15,28 @@ cd vagrant-emberjs
 ```
 vagrant up
 ```
-#### With terraform it will spin-up one EC2 instance in AWS.
+#### With terraform it will spin-up one EC2 instance in AWS in two Terraform workspaces.
+- First create two .tfvars files one for prod and one for dev (just change the network) refer to the example .
 ```
+terraform workspace new prod //will create prod workspace 
 terraform init
-terraform apply
+terraform apply -var-file=terraform_prod.tfvars
+terraform destroy -var-file=terraform_prod.tfvars // do not forget to destroy the environment
+terraform workspace new dev //will create dev workspace 
+terraform init
+terraform apply -var-file=terraform_dev.tfvars
+terraform destroy -var-file=terraform_dev.tfvars // do not forget to destroy the environment
 ```
+- You can switch the workspaces with a following commands:
+```
+terraform workspace list // will list all workspaces 
+terraform workspace select prod
+terraform workspace select dev
+```
+- Terraform state file will be created in the terraform.tfstate.d directory in dedicated folders.
+### If you want to create your own project please follow the below step:
 
-#### If you want to create your own project please follow the below step:
-
-### Setup ember hello world
+#### Setup ember hello world
 
 ```
 vagrant ssh
@@ -48,4 +61,3 @@ cd hello-world
 ```
 ember serve
 ```
-
