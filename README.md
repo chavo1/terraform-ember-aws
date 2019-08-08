@@ -14,11 +14,11 @@ cd terraform-ember-aws
 #### Terraform will spin-up Two EC2 instances in AWS - one for each Terraform workspace.
 - First create two .tfvars files one for prod and one for dev (just change the network) refer to the example .
 ```
-terraform workspace new test //will create dev workspace 
+terraform workspace new test // will create test workspace 
 terraform init
 terraform apply -var-file=terraform_test.tfvars
 terraform destroy -var-file=terraform_test.tfvars // do not forget to destroy the environment
-terraform workspace new prod //will create prod workspace 
+terraform workspace new prod // will create prod workspace 
 terraform init
 terraform apply -var-file=terraform_prod.tfvars
 terraform destroy -var-file=terraform_prod.tfvars // do not forget to destroy the environment
