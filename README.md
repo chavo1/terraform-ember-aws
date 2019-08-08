@@ -1,4 +1,4 @@
-# This repo contains Vagrant and Terraform projects with a simple Web "Hello World" app with Ember CLI
+# This repo contains Terraform projects with a simple Web "Hello World" app with Ember CLI
 
 ## Prerequisites
 - [Terraform](https://www.terraform.io/)
