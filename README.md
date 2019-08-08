@@ -10,7 +10,7 @@
 git clone https://github.com/chavo1/terraform-ember-aws.git
 cd terraform-ember-aws
 ```
-### I will use [THIS](https://github.com/chavo1/hello-world) ember project it is automated with Terraform for AWS deployment.
+### I will use [THIS](https://github.com/chavo1/hello-ember) ember project it is automated with Terraform for AWS deployment.
 #### Terraform will spin-up Two EC2 instances in AWS - one for each Terraform workspace.
 - First create two .tfvars files one for prod and one for dev (just change the network) refer to the example .
 ```
