@@ -11,20 +11,14 @@ sudo apt-get update -y
 which unzip &>/dev/null || {
 sudo apt-get install -y unzip
 }
-wget https://github.com/chavo1/hello-world/archive/0.0.5.zip && unzip 0.0.5.zip
-mv hello-world-0.0.5 /home/ubuntu/hello-world
-cd /home/ubuntu/hello-world  
+pushd /home/ubuntu
+    wget https://github.com/chavo1/hello-ember/releases/download/0.0.2/www.zip && unzip www.zip
+    pushd www/
+    # starting ember
+        echo starting ember...
+        sudo npm install
+popd
 
-# starting ember
-echo starting ember...
-sudo npm install
 sudo systemctl start ember
-
-if [ $? -eq 0 ]; then
-    echo Ember started
-else
-    echo Ember not started
-    exit 1
-fi
 
 set +x
