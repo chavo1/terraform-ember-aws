@@ -3,7 +3,7 @@
 ## Prerequisites
 - [Terraform](https://www.terraform.io/)
 - [Packer](https://www.packer.io/)
-  - | You can use [THIS](https://github.com/chavo1/packer-ember/tree/master/aws-ami) GitHub repo to prepare your custom AWS AMI
+  - | You can use [THIS](https://github.com/chavo1/packer-ami-ember) GitHub repo to prepare your custom AWS AMI
 
 ## Clone the repo
 ```
@@ -27,6 +27,6 @@ terraform destroy -var-file=terraform_prod.tfvars // do not forget to destroy th
 ```
 terraform workspace list // will list all workspaces 
 terraform workspace select prod
-terraform workspace select dev
+terraform workspace select test
 ```
 - Terraform state file will be created in the terraform.tfstate.d directory in dedicated folders.
