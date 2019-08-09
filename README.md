@@ -49,7 +49,9 @@ bundle exec kitchen verify
 bundle exec kitchen destroy
 ```
 - The result should be - saving a screenshot of the web page in scr directory and the output from the HTTP test:
+
 <img src="scr/screen.png" width="512" height="270">
+
 ``` 
   HTTP GET on http://ec2-35-172-231-144.compute-1.amazonaws.com:4200
      ✔  status should cmp == 200
@@ -58,9 +60,9 @@ Test Summary: 1 successful, 0 failures, 0 skipped
        Finished verifying <default-terraform> (0m9.08s).
 -----> Kitchen is finished. (0m11.25s)
 ```
-- You need to test with different .tfvars file, just change with appropriate value in .kitchen.yml
+- If you need to test with different .tfvars file, just change with appropriate value in .kitchen.yml
 
 ```
-  variable_files:
-    - terraform_prod.tfvars
+variable_files:
+  - terraform_prod.tfvars
 ```
