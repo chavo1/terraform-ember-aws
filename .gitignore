@@ -1,2 +1,5 @@
 .terraform
 terraform*
+.kitchen*
+.DS_Store
+Gemfile.lock
