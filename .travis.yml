@@ -1,0 +1,27 @@
+language: ruby
+dist: xenial
+sudo: required
+cache:
+- apt
+addons:
+  firefox: "68.0"
+  apt:
+    packages:
+    - curl
+    - wget
+install:
+- sudo curl -sL -o /tmp/terraform.zip https://releases.hashicorp.com/terraform/0.12.6/terraform_0.12.6_linux_amd64.zip
+- sudo unzip -d /usr/local/bin /tmp/terraform.zip
+- sudo gem install bundler
+- bundle install
+script:
+- terraform init
+- bundle exec kitchen converge
+- bundle exec kitchen verify
+- bundle exec kitchen destroy
+
+before_install:
+- openssl aes-256-cbc -K $encrypted_503c78140243_key -iv $encrypted_503c78140243_iv -in id_rsa.enc -out id_rsa -d
+- mkdir -p ~/.ssh
+- cp id_rsa ~/.ssh
+- openssl aes-256-cbc -K $encrypted_503c78140243_key -iv $encrypted_503c78140243_iv -in terraform_prod.tfvars.enc -out terraform_prod.tfvars -d
