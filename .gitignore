@@ -1,5 +1,6 @@
 .terraform
 terraform*
-.kitchen*
+.kitchen
 .DS_Store
 Gemfile.lock
+id_rsa

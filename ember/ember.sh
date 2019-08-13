@@ -12,11 +12,10 @@ which unzip &>/dev/null || {
 sudo apt-get install -y unzip
 }
 pushd /home/ubuntu
-    wget https://github.com/chavo1/hello-ember/releases/download/0.0.2/www.zip && unzip www.zip
+    wget https://github.com/chavo1/hello-ember/releases/latest/download/www.zip && unzip www.zip
     pushd www/
     # starting ember
         echo starting ember...
-        sudo npm install
 popd
 
 sudo systemctl start ember
